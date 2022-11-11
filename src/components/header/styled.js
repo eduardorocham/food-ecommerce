@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Header = styled.header`
+export const HeaderArea = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 
     .logo {
         display: flex;
