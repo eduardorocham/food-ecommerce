@@ -22,26 +22,38 @@ export const MenuFoods = styled.div`
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 15px;
-    }
 
-    button {
-        background-color: transparent;
-        border: 0;
-        color: #FFF;
-        font-size: 14px;
-        padding: 10px;
-        border-radius: 10px;
-        display: flex; justify-content: center;
-        align-items: center;
-        cursor: pointer;
+        .button-category {
+            background-color: transparent;
+            border: 0;
+            color: #FFF;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex; justify-content: center;
+            align-items: center;
+            cursor: pointer;
 
-        span {
-            margin-left: 5px;
+            span {
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background-color: #FFF;
+                color: #f64c03;
+            }
         }
 
-        &.active, &:hover {
+        .button-category-active {
             background-color: #FFF;
             color: #f64c03;
+            border: 0;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex; justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
     }
 `

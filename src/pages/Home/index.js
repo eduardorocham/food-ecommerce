@@ -11,7 +11,21 @@ import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 import BakeryDiningIcon from '@mui/icons-material/BakeryDining';
 
 const Home = () => {
-    const [list, setList] = useState(Products);
+    const [list, setList] = useState([]);
+    const [category, setCategory] = useState('All');
+
+    const filterCategory = () => {
+        if (category === 'All') {
+            setList(Products);
+        } else {
+            let newList = Products.filter(item => item = item.category === category);
+            setList(newList);
+        }
+    }
+
+    useEffect(()=> {
+        filterCategory();
+    }, [category])
 
     return (
         <HomeArea>
@@ -19,18 +33,27 @@ const Home = () => {
                 <h1>Popular Foods</h1>
                 <MenuFoods>
                     <div className="buttons-area">
-                        <button>All</button>
-                        <button>
-                            <LunchDiningIcon />
-                            <span>Burger</span>
+                        <button 
+                            className={category == 'All' ? 'button-category-active' : 'button-category'} onClick={() => setCategory('All')}>
+                                All
                         </button>
-                        <button>
-                            <LocalPizzaIcon />
-                            <span>Pizza</span>
+                        <button 
+                            className={category == 'Burger' ? 'button-category-active' : 'button-category'} 
+                            onClick={() => setCategory('Burger')}>
+                                <LunchDiningIcon />
+                                <span>Burger</span>
                         </button>
-                        <button>
-                            <BakeryDiningIcon />
-                            <span>Bread</span>
+                        <button 
+                            className={category == 'Pizza' ? 'button-category-active' : 'button-category'} 
+                            onClick={() => setCategory('Pizza')}>
+                                <LocalPizzaIcon />
+                                <span>Pizza</span>
+                        </button>
+                        <button 
+                            className={category == 'Bread' ? 'button-category-active' : 'button-category'} 
+                            onClick={() => setCategory('Bread')}>
+                                <BakeryDiningIcon />
+                                <span>Bread</span>
                         </button>
                     </div>
                 </MenuFoods>

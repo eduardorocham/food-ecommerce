@@ -21,6 +21,11 @@ export const FoodArea = styled.div`
     .food-item--img img {
         width:100%;
         height:auto;
+        transition: all ease 0.2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     .food-item--name {
