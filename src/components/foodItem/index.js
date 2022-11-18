@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import { LocalPizza } from '@mui/icons-material';
+import { Context } from '../../contexts/Context';
 import { FoodArea } from "./styled";
 
-const FoodItem = ({ item }) => {
+const FoodItem = ({item}) => {
+    const { state, dispatch } = useContext(Context);
+
     return (
         <FoodArea>
             <a href="">
@@ -9,7 +14,10 @@ const FoodItem = ({ item }) => {
             <div className="food-item--name">{item.title}</div>
             <div className="food-item--column">
                 <div className="food-item--price">R$ {item.price}</div>
-                <button>Add to cart</button>
+                <button onClick={() => dispatch({
+                    type: 'ADD',
+                    payload: item
+                })}>Add to cart</button>
             </div>
         </FoodArea>
     )
