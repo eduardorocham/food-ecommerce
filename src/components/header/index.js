@@ -9,9 +9,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 
 import { Context } from '../../contexts/Context.js';
+import { PropaneSharp } from "@mui/icons-material";
 
-const Header = () => {
+const Header = ({show, setShow}) => {
     const { state, dispatch } = useContext(Context);
+
+    const changeShow = () => {
+        setShow(!show);
+        console.log(show);
+    }
 
     return (
         <Container>
@@ -27,8 +33,8 @@ const Header = () => {
                     </ul>
                 </HeaderMenu>
                 <HeaderButtons>
-                    <div className="header-btn">
-                        <ShoppingCartIcon />
+                    <div className="header-btn" onClick={changeShow}>
+                        <ShoppingCartIcon/>
                         {state.length > 0 &&
                             <div className="cart-items">{state.length}</div>
                         }
