@@ -16,7 +16,9 @@ const FoodItem = ({item}) => {
                 <div className="food-item--price">R$ {item.price}</div>
                 <button onClick={() => dispatch({
                     type: 'ADD',
-                    payload: item
+                    payload: {
+                        item: item
+                    }
                 })}>Add to cart</button>
             </div>
         </FoodArea>

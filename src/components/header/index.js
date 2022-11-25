@@ -7,6 +7,8 @@ import Logo from '../../assets/images/res-logo.png';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
+import MenuIcon from '@mui/icons-material/Menu';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 import { Context } from '../../contexts/Context.js';
 import { PropaneSharp } from "@mui/icons-material";
@@ -14,9 +16,14 @@ import { PropaneSharp } from "@mui/icons-material";
 const Header = ({show, setShow}) => {
     const { state, dispatch } = useContext(Context);
 
+    const [showMenu, setShowMenu] = useState(false);
+
+    const changeShowMenu = () => {
+        setShowMenu(!showMenu);
+    }
+
     const changeShow = () => {
         setShow(!show);
-        console.log(show);
     }
 
     return (
@@ -25,13 +32,18 @@ const Header = ({show, setShow}) => {
                 <div className="logo">
                     <img src={Logo} alt="logo"></img>
                 </div>
-                <HeaderMenu>
+                <div>
+                <HeaderMenu showMenu={showMenu}>
+                    <div className="closeIcon">
+                        <CancelIcon style={{width: 30, height: 30}} onClick={changeShowMenu}/>
+                    </div>
                     <ul>
                         <NavLink>Home</NavLink>
                         <NavLink>Foods</NavLink>
                         <NavLink>Cart</NavLink>
                     </ul>
                 </HeaderMenu>
+                </div>
                 <HeaderButtons>
                     <div className="header-btn" onClick={changeShow}>
                         <ShoppingCartIcon/>
@@ -41,6 +53,9 @@ const Header = ({show, setShow}) => {
                     </div>
                     <div className="header-btn">
                         <PersonIcon />
+                    </div>
+                    <div className="header-btn menu-icon">
+                        <MenuIcon onClick={changeShowMenu}/>
                     </div>
                 </HeaderButtons>
             </HeaderArea>

@@ -7,6 +7,10 @@ export const HomeArea = styled.div`
         font-family: 'RocknRoll One', sans-serif;
         margin: 20px 0;
     }
+
+    @media(max-width: 425px) {
+        padding: 0 15px;
+    }
 `
 
 export const MenuFoods = styled.div`
@@ -17,6 +21,10 @@ export const MenuFoods = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+
+    @media(max-width: 425px) {
+        padding 15px 10px;
+    }
 
     .buttons-area {
         display: grid;
@@ -63,4 +71,8 @@ export const FoodItemArea = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @media(max-width: 425px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `

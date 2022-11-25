@@ -21,10 +21,43 @@ export const HeaderArea = styled.header`
 `
 
 export const HeaderMenu = styled.nav`
+    .closeIcon {
+        display: none;
+        margin-bottom: 15px;
+        padding: 20px 20px 0;
+
+        @media(max-width: 425px) {
+            display: block;
+        }
+    }
+
     ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
+    }
+
+    @media(max-width: 425px) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 100vh;
+            background-color: #FFF;
+            z-index: 999;
+            display: ${props => props.showMenu ? 'block' : 'none'};
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 25px;
+        }
     }
 `
 
@@ -47,6 +80,14 @@ export const HeaderButtons = styled.div`
         align-items: center; 
         cursor: pointer;
         position: relative;
+
+        &.menu-icon {
+            display: none;
+
+            @media(max-width: 425px) {
+                display: flex;
+            }
+        }
     }
 
     .cart-items {
