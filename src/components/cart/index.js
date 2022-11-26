@@ -19,7 +19,7 @@ const Cart = ({show, setShow}) => {
             </div>
             <div className='cart-items'>
                 {state.map((item, index) => (
-                <CartItem key={index} item={item} />
+                    <CartItem key={index} index={index} item={item} />
                 ))}
             </div>
         </CartArea>

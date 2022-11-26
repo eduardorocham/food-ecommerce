@@ -12,7 +12,6 @@ export const cartReducer = (state, action) => {
                         price: action.payload.item.price * qt,
                     });
                 }
-                console.log(newState);
                 return newState;
             }
         break;
@@ -24,8 +23,24 @@ export const cartReducer = (state, action) => {
             }
         break;
         case 'ADD_SAME':
-            let checkItem = state.findIndex(i => i.item.id === action.payload.item.id);
-            console.log(checkItem);
+            if (action.payload) {
+                let newState = [...state];
+                let index = parseInt(action.payload.index);
+                newState[index].qt = newState[index].qt + 1;
+                newState[index].price = newState[index].price * newState[index].qt;
+                console.log(newState[index]);
+                return newState;
+            }
+        break;
+        case 'DEL_SAME':
+            if (action.payload) {
+                let newState = [...state];
+                let index = parseInt(action.payload.index);
+                newState[index].qt = newState[index].qt - 1;
+                newState[index].price = action.payload.item;
+                console.log(newState[index]);
+                return newState;
+            }
         break;
     }
 

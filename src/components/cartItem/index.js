@@ -4,7 +4,7 @@ import { CartItemArea } from './styled';
 
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-const CartItem = ({item}) => {
+const CartItem = ({item, index}) => {
     const { state, dispatch } = useContext(Context);
 
     return (
@@ -20,12 +20,18 @@ const CartItem = ({item}) => {
                         <div className='cartItem-price'>{`R$ ${item.price}`}</div>
                     </div>
                     <div className='cartItem-quantity'>
-                        <button>-</button>
-                        1
+                        <button onClick={() => dispatch({
+                            type: 'DEL_SAME',
+                            payload: {
+                                index: index
+                            }
+                        })}>-</button>
+                        <span>{item.qt}</span>
                         <button onClick={() => dispatch({
                             type: 'ADD_SAME',
                             payload: {
-                                item: item.item
+                                index: index,
+                                item: item.item.price
                             }
                         })}>+</button>
                     </div>
