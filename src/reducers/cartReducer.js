@@ -4,21 +4,20 @@ export const cartReducer = (state, action) => {
             if (action.payload) {
                 let newState = [...state];
                 let qt = 0;
-                let checkItem = newState.findIndex(i => i.item.id === action.payload.item.id);
+                let checkItem = newState.findIndex(i => i.product.id === action.payload.product.id);
                 if (checkItem === -1) {
                     newState.push({
-                        item: action.payload.item,
+                        product: action.payload.product,
                         qt: qt = 1,
-                        price: action.payload.item.price * qt,
+                        price: action.payload.product.price * qt,
                     });
-                }
+                };
                 return newState;
             }
         break;
         case 'DEL':
             if (action.payload) {
-                console.log(state);
-                let newState = state.filter(i => i.item.id !== action.payload.id);
+                let newState = state.filter(i => i.product.id !== action.payload.product.id);
                 return newState;
             }
         break;
@@ -36,10 +35,13 @@ export const cartReducer = (state, action) => {
             if (action.payload) {
                 let newState = [...state];
                 let index = parseInt(action.payload.index);
-                newState[index].qt = newState[index].qt - 1;
-                newState[index].price = action.payload.item;
-                console.log(newState[index]);
-                return newState;
+
+                if (newState[index].qt > 1) {
+                    newState[index].qt = newState[index].qt - 1;
+                    newState[index].price = newState[index].product.price * newState[index].qt;
+                    console.log(newState[index]);
+                    return newState;
+                }  
             }
         break;
     }
