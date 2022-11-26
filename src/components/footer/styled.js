@@ -15,6 +15,19 @@ export const FooterAreaContent = styled.div`
         gap: 20px;
         padding: 30px 0;
 
+        @media(max-width: 425px) {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 30px 20px;
+        }
+
+        .footer-data, .footer-data--day {
+            @media(max-width: 425px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
         .footer-data img {
             width: 60px;
             height: 60px;
@@ -23,12 +36,21 @@ export const FooterAreaContent = styled.div`
         .footer-data p {
             font-size: 13px;
             margin-top: 15px;
+
+            @media(max-width: 425px) {
+                font-size: 18px;
+                text-align: center;
+            }
         }
 
         .footer-data--title {
             font-weight: 700;
             font-size: 16px;
             margin-bottom: 10px;
+
+            @media(max-width: 425px) {
+                font-size: 18px;
+            }
         }
 
         span {
@@ -41,6 +63,10 @@ export const FooterAreaContent = styled.div`
 
             &.margin {
                 margin-bottom: 10px;
+            }
+
+            @media(max-width: 425px) {
+                font-size: 18px;
             }
         }
 
