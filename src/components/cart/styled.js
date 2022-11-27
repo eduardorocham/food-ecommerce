@@ -17,4 +17,10 @@ export const CartArea = styled.div`
     .close-cart {
        cursor: pointer;
     }
+
+    .cart-empty {
+        text-align: center;
+        font-weight: 700;
+        margin-top: 20px;
+    }
 `

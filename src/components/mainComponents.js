@@ -11,3 +11,14 @@ export const Container = styled.div`
         width: auto;
     }
 `
+
+export const FoodItemArea = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @media(max-width: 425px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+`

@@ -38,9 +38,9 @@ const Header = ({show, setShow}) => {
                         <CancelIcon style={{width: 30, height: 30}} onClick={changeShowMenu}/>
                     </div>
                     <ul>
-                        <NavLink>Home</NavLink>
-                        <NavLink>Foods</NavLink>
-                        <NavLink>Cart</NavLink>
+                        <NavLink to='/'>Home</NavLink>
+                        <NavLink to='/foods'>Foods</NavLink>
+                        <NavLink to='/cart'>Cart</NavLink>
                     </ul>
                 </HeaderMenu>
                 </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderArea = styled.header`
@@ -66,6 +66,10 @@ export const NavLink = styled(Link)`
     font-weight: 700;
 
     &:hover {
+        color: #f64c03;
+    }
+
+    &.active {
         color: #f64c03;
     }
 `
