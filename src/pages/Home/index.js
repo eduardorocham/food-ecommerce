@@ -59,7 +59,7 @@ const Home = () => {
                 </MenuFoods>
                 <FoodItemArea>
                     {list.map((i, k) => (
-                        <FoodItem item={i} key={k} />
+                        <FoodItem item={i} key={k} index={k}/>
                     ))}
                 </FoodItemArea>
             </Container>

@@ -11,7 +11,13 @@ export const cartReducer = (state, action) => {
                         qt: qt = 1,
                         price: action.payload.product.price * qt,
                     });
-                };
+                } else {
+                    let newState = [...state];
+                    let index = parseInt(action.payload.index);
+                    newState[index].qt = newState[index].qt + 1;
+                    newState[index].price = newState[index].price * newState[index].qt;
+                    return newState;
+                }
                 return newState;
             }
         break;
@@ -26,8 +32,7 @@ export const cartReducer = (state, action) => {
                 let newState = [...state];
                 let index = parseInt(action.payload.index);
                 newState[index].qt = newState[index].qt + 1;
-                newState[index].price = newState[index].price * newState[index].qt;
-                console.log(newState[index]);
+                newState[index].price = newState[index].product.price * newState[index].qt;
                 return newState;
             }
         break;
@@ -39,7 +44,6 @@ export const cartReducer = (state, action) => {
                 if (newState[index].qt > 1) {
                     newState[index].qt = newState[index].qt - 1;
                     newState[index].price = newState[index].product.price * newState[index].qt;
-                    console.log(newState[index]);
                     return newState;
                 }  
             }

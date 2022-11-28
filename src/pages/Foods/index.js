@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { FoodsArea, FoodOptions } from "./styled";
-import { Container, FoodItemArea } from '../../components/mainComponents';
+import { Container, FoodItemArea, FoodBanner } from '../../components/mainComponents';
 import FoodItem from "../../components/foodItem";
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -32,7 +32,7 @@ const Foods = () => {
 
     return (
         <FoodsArea>
-            <div className="food-banner"></div>
+            <FoodBanner />
             <Container>
                 <div className="input-area">
                     <div className="input-looking">
@@ -47,11 +47,16 @@ const Foods = () => {
                         <option>Low price</option>
                     </select>
                 </div>
-                <FoodItemArea>
-                    {list.map((item, index) => (
-                        <FoodItem item={item} key={index}/>
-                    ))}
-                </FoodItemArea>
+                {list.length === 0 &&
+                    <div style={{fontWeight: 700}}>No products found</div>
+                }
+                {list.length > 0 &&
+                    <FoodItemArea>
+                        {list.map((item, index) => (
+                            <FoodItem item={item} key={index} />
+                        ))}
+                    </FoodItemArea>
+                } 
             </Container>
         </FoodsArea>
     )

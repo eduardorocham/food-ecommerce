@@ -1,16 +1,6 @@
 import styled from "styled-components";
 
-import foodBannerImage from '../../assets/images/foods-banner.jpg';
-
 export const FoodsArea = styled.div`
-    .food-banner {
-        background: url(${foodBannerImage}) no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 200px;
-        opacity: 0.5;
-    }
-
     .input-area {
         display: flex;
         justify-content: space-between;
@@ -32,6 +22,10 @@ export const FoodsArea = styled.div`
         select {
             width: 25%;
         }
+    }
+
+    .warning {
+        text-align: center;
     }
 `
 

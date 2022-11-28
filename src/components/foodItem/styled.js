@@ -6,21 +6,14 @@ export const FoodArea = styled.div`
     height: 230px;
     padding: 20px;
 
-    a {
-        display:flex;
-        flex-direction: column;
-        align-items:center;
-        text-decoration: none;
-    }
-
     .food-item--img {
-        width: 100px;
-        height: 100px;
+        display: flex;
+        justify-content: center;
     }
 
     .food-item--img img {
-        width:100%;
-        height:auto;
+        width: 100px;
+        height: 100px;
         transition: all ease 0.2s;
 
         &:hover {
