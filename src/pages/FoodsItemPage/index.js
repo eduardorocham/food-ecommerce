@@ -12,15 +12,12 @@ const FoodsItemPage = () => {
 
     const getFood = (id) => {
         const product = Products.filter((i) => i.id === id);
-        console.log(product);
-        setFood(product[0]);
-        
+        setFood({...product[0]});
     };
 
     useEffect(()=> {
         if(params.id) {
             getFood(params.id);
-            console.log(food);
         }
     }, []);
 
@@ -28,16 +25,13 @@ const FoodsItemPage = () => {
         <div>
             <FoodBanner />
             <Container>
-                {food.length > 0 &&
-                    <div className='food-product'>
+                <div className='food-product'>
                     <div className='food-product--images'>
-                        {/* <img src={food[0].image01} alt={food.title}/>
-                        <img src={food[0].image02} alt={food.title}/>
-                        <img src={food[0].image03} alt={food.title}/> */}
+                        <img src={food.image01} alt={food.title}/>
+                        <img src={food.image02} alt={food.title}/>
+                        <img src={food.image03} alt={food.title}/>
                     </div>
                 </div>
-                }
-                
             </Container>
         </div>
     )
