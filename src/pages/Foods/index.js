@@ -53,7 +53,7 @@ const Foods = () => {
                 {list.length > 0 &&
                     <FoodItemArea>
                         {list.map((item, index) => (
-                            <FoodItem item={item} key={index} />
+                            <FoodItem item={item} key={index} index={index}/>
                         ))}
                     </FoodItemArea>
                 } 
