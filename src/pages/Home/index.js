@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { HomeArea, MenuFoods } from "./styled";
-import { Container, FoodItemArea } from '../../components/mainComponents';
+import { Container, FoodItemsArea } from '../../components/mainComponents';
 import FoodItem from '../../components/foodItem';
 
 import Products from '../../fake-data/products';
@@ -57,11 +57,11 @@ const Home = () => {
                         </button>
                     </div>
                 </MenuFoods>
-                <FoodItemArea>
+                <FoodItemsArea>
                     {list.map((i, k) => (
                         <FoodItem item={i} key={k} index={k}/>
                     ))}
-                </FoodItemArea>
+                </FoodItemsArea>
             </Container>
         </HomeArea>
     )

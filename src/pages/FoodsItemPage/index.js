@@ -2,21 +2,28 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Button from '../../components/addToCart';
-import { FoodBanner, Container } from '../../components/mainComponents';
+import FoodItem from '../../components/foodItem';
+import { FoodBanner, Container, FoodItemsArea } from '../../components/mainComponents';
 import { FoodItemArea } from './styled';
 
 import Products from '../../fake-data/products';
 
 const FoodsItemPage = () => {
     const [food, setFood] = useState({});
+    const [foodSameCategory, setFoodSameCategory] = useState([]);
     const [mainImg, setMainImg] = useState('');
+    const [showDescription, setShowDescription] = useState(true);
+    const [showReview, setShowReview] = useState(false);
 
     const params = useParams();
 
     const getFood = (id) => {
         const product = Products.filter((i) => i.id === id);
         console.log(product);
+        const sameCategory = Products.filter((i) => i.category === product[0].category);
+        console.log(sameCategory);
         setFood(product[0]);
+        setFoodSameCategory(sameCategory);
         setMainImg(product[0].image01);
     };
 
@@ -32,10 +39,14 @@ const FoodsItemPage = () => {
         setMainImg(food.image03);
     }
 
+    const changeShowButton = () => {
+        setShowDescription(!showDescription);
+        setShowReview(!showReview);
+    }
+
     useEffect(()=> {
         if(params.id) {
             getFood(params.id);
-            console.log(food);
         }
     }, []);
 
@@ -60,8 +71,31 @@ const FoodsItemPage = () => {
                         <div className='food-product-category'>
                             Category: <span>{food.category}</span>
                         </div>
-                        <Button item={food}/>
+                        <Button item={food} index={'0'} />
                     </div>
+                </div>
+                <div className='food-infos'>
+                    <button className={showDescription ? 'active' : ''} onClick={changeShowButton}>
+                        Description
+                    </button>
+                    <button className={showReview ? 'active' : ''} onClick={changeShowButton}>
+                        Review
+                    </button>
+                    {showDescription &&
+                        <div className='food-desc'>
+                            {food.desc}
+                        </div>
+                    }
+                </div>
+                <div className='food-moreOptions'>
+                    <h3>You might also like</h3>
+                    {foodSameCategory.length > 0 &&
+                        <FoodItemsArea>
+                            {foodSameCategory.map((i, k) => (
+                                <FoodItem item={i} index={k} key={k}/>
+                            ))}
+                        </FoodItemsArea>
+                    }
                 </div>
             </Container>
         </FoodItemArea>

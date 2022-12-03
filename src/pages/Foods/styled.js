@@ -24,8 +24,10 @@ export const FoodsArea = styled.div`
         }
     }
 
-    .warning {
+    .warning-area {
+        height: 30vh;
         text-align: center;
+        font-weight: 700;
     }
 `
 

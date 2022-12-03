@@ -14,7 +14,7 @@ export const Container = styled.div`
     }
 `
 
-export const FoodItemArea = styled.div`
+export const FoodItemsArea = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -29,6 +29,6 @@ export const FoodBanner = styled.div`
     background: url(${foodBannerImage}) no-repeat;
     background-position: center;
     background-size: cover;
-    height: 200px;
+    height: 180px;
     opacity: 0.5;
 `

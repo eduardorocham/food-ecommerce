@@ -65,5 +65,40 @@ export const FoodItemArea = styled.div`
                 }
             }
         }
-    }  
+    } 
+    
+    .food-infos {
+        width: 100%;
+        margin-top: 10px;
+
+        button {
+            background: transparent;
+            border: 0;
+            font-size: 14px;
+            font-family: 'RocknRoll One',sans-serif;
+            margin-right: 20px;
+            cursor: pointer;
+
+            &.active {
+                color: #f64c03;
+            }
+        }
+
+        .food-desc {
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #CCC;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+    }
+
+    .food-moreOptions {
+        width: 100%;
+
+        h3 {
+            font-size: 20px;
+            margin: 50px 0 40px;
+        }
+    }
 `
