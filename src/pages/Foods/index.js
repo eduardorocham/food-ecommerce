@@ -34,29 +34,31 @@ const Foods = () => {
         <FoodsArea>
             <FoodBanner />
             <Container>
-                <div className="input-area">
-                    <div className="input-looking">
-                        <input placeholder="I´m looking for..." value={name} onChange={handleName}/>
-                        <SearchIcon style={{marginLeft: -30}}/>
+                <div className="foodsArea-content">
+                    <div className="input-area">
+                        <div className="input-looking">
+                            <input placeholder="I´m looking for..." value={name} onChange={handleName}/>
+                            <SearchIcon style={{marginLeft: -30}}/>
+                        </div>
+                        <select>
+                            <option>Default</option>
+                            <option>Alphabetically, A-Z</option>
+                            <option>Alphabetically, Z-A</option>
+                            <option>High price</option>
+                            <option>Low price</option>
+                        </select>
                     </div>
-                    <select>
-                        <option>Default</option>
-                        <option>Alphabetically, A-Z</option>
-                        <option>Alphabetically, Z-A</option>
-                        <option>High price</option>
-                        <option>Low price</option>
-                    </select>
+                    {list.length === 0 &&
+                        <div className="warning-area">No products found</div>
+                    }
+                    {list.length > 0 &&
+                        <FoodItemsArea>
+                            {list.map((item, index) => (
+                                <FoodItem item={item} key={index} index={index}/>
+                            ))}
+                        </FoodItemsArea>
+                    } 
                 </div>
-                {list.length === 0 &&
-                    <div className="warning-area">No products found</div>
-                }
-                {list.length > 0 &&
-                    <FoodItemsArea>
-                        {list.map((item, index) => (
-                            <FoodItem item={item} key={index} index={index}/>
-                        ))}
-                    </FoodItemsArea>
-                } 
             </Container>
         </FoodsArea>
     )

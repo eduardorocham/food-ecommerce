@@ -1,26 +1,57 @@
 import styled from "styled-components";
 
 export const FoodsArea = styled.div`
+    .foodsArea-content {
+        width: 100%;
+        
+        @media(max-width: 425px) {
+            padding: 0 15px; 
+        }
+    }
+    
     .input-area {
         display: flex;
         justify-content: space-between;
         width: 100%;
         margin: 40px 0;
 
+        @media(max-width: 425px) {
+            display: block;
+        }
+
         .input-looking {
             width: 50%;
             display: flex;
             align-items: center;
 
+            @media(max-width: 425px) {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
             input {
                 width: 100%;
                 outline: 0;
                 padding: 5px;
+
+                @media(max-width: 425px) {
+                    padding: 10px 5px;
+
+                    &::placeholder {
+                        font-size: 16px;
+                    }
+                }
             }
         }
 
         select {
             width: 25%;
+
+            @media(max-width: 425px) {
+                width: 100%;
+                padding: 10px 5px;
+                font-size: 16px;
+            }
         }
     }
 
