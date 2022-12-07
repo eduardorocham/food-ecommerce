@@ -4,6 +4,10 @@ export const CartPageArea = styled.div`
     width: 100%;
     min-height: 332px;
 
+    @media(max-width: 425px) {
+        padding: 0 15px;
+    }
+
     .cartPageArea-warning {
         text-align: center;
         font-weight: 700;
@@ -48,6 +52,20 @@ export const CartPageArea = styled.div`
             font-size: 22px;
             color: #F00;
         }
+
+        @media(max-width: 425px) {
+            font-size: 25px;
+
+            span {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .taxes-warning {
+        @media(max-width: 425px) {
+            font-size: 18px;
+        }
     }
 
     .buttons {
@@ -67,6 +85,10 @@ export const CartPageArea = styled.div`
 
             &:hover {
                 background-color: #c94005;
+            }
+
+            @media(max-width: 425px) {
+                font-size: 16px;
             }
         }
     }

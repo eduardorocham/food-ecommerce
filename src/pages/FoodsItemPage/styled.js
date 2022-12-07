@@ -3,14 +3,24 @@ import styled from "styled-components";
 export const FoodItemArea = styled.div`
     .food-product {
         width: 100%;
-        max-height: 350px;
         margin-top: 40px;
         display: flex;
+
+        @media(max-width: 425px) {
+            display: block;
+            padding: 0 15px;
+        }
 
         .food-product--images {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
             gap: 10px;
+
+            @media(max-width: 425px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+                margin-bottom: 10px;
+            }
         }
 
         .food-product--images img {
@@ -26,6 +36,10 @@ export const FoodItemArea = styled.div`
             align-items: center;
             margin-left: 40px;
 
+            @media(max-width: 425px) {
+                margin-left: 0;
+            }
+
             img {
                 width: 350px;
                 height: 350px;
@@ -34,6 +48,10 @@ export const FoodItemArea = styled.div`
 
         .food-product--info {
             margin-left: 40px;
+
+            @media(max-width: 425px) {
+                margin-left: 0;
+            }
 
             .food-product-title {
                 font-size: 30px;
@@ -71,6 +89,11 @@ export const FoodItemArea = styled.div`
         width: 100%;
         margin-top: 10px;
 
+        @media(max-width: 425px) {
+            padding: 0 15px;
+            margin-top: 30px;
+        }
+
         button {
             background: transparent;
             border: 0;
@@ -95,6 +118,10 @@ export const FoodItemArea = styled.div`
 
     .food-moreOptions {
         width: 100%;
+
+        @media(max-width: 425px) {
+            padding: 0 15px;
+        }
 
         h3 {
             font-size: 20px;
