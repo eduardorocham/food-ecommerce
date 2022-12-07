@@ -29,6 +29,6 @@ export const FoodBanner = styled.div`
     background: url(${foodBannerImage}) no-repeat;
     background-position: center;
     background-size: cover;
-    height: 180px;
+    height: ${(props) => props.small ? '90px' : '180px'};
     opacity: 0.5;
 `
