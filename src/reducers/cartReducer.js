@@ -12,11 +12,7 @@ export const cartReducer = (state, action) => {
                         price: action.payload.product.price * qt,
                     });
                 } else {
-                    let newState = [...state];
-                    let index = parseInt(action.payload.index);
-                    newState[index].qt = newState[index].qt + 1;
-                    newState[index].price = newState[index].price * newState[index].qt;
-                    return newState;
+                    alert('Item já adicionado ao carrinho!');
                 }
                 return newState;
             }
