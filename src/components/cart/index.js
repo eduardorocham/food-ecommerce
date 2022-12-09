@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../contexts/Context';
+import { Link } from 'react-router-dom';
 import CartItem from '../cartItem';
 import { CartArea } from "./styled";
 
@@ -43,7 +44,9 @@ const Cart = ({show, setShow}) => {
                         <div className='subtotal-value'>
                             Subtotal: <span>${subtotal}</span>
                         </div>
-                        <button>Check out</button>
+                        <Link to="/cart">
+                            <button>Check out</button> 
+                        </Link>
                     </div>
                 </>
             }

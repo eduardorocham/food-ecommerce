@@ -12,8 +12,8 @@ const FoodsItemPage = () => {
     const [food, setFood] = useState({});
     const [foodSameCategory, setFoodSameCategory] = useState([]);
     const [mainImg, setMainImg] = useState('');
-    const [showDescription, setShowDescription] = useState(true);
-    const [showReview, setShowReview] = useState(false);
+    // const [showDescription, setShowDescription] = useState(true);
+    // const [showReview, setShowReview] = useState(false);
 
     const params = useParams();
 
@@ -39,10 +39,10 @@ const FoodsItemPage = () => {
         setMainImg(food.image03);
     }
 
-    const changeShowButton = () => {
-        setShowDescription(!showDescription);
-        setShowReview(!showReview);
-    }
+    // const changeShowButton = () => {
+    //     setShowDescription(!showDescription);
+    //     setShowReview(!showReview);
+    // }
 
     useEffect(()=> {
         if(params.id) {
@@ -75,17 +75,15 @@ const FoodsItemPage = () => {
                     </div>
                 </div>
                 <div className='food-infos'>
-                    <button className={showDescription ? 'active' : ''} onClick={changeShowButton}>
+                    <button>
                         Description
                     </button>
-                    <button className={showReview ? 'active' : ''} onClick={changeShowButton}>
+                    {/* <button className={showReview ? 'active' : ''} onClick={changeShowButton}>
                         Review
-                    </button>
-                    {showDescription &&
-                        <div className='food-desc'>
-                            {food.desc}
-                        </div>
-                    }
+                    </button> */}
+                    <div className='food-desc'>
+                        {food.desc}
+                    </div>
                 </div>
                 <div className='food-moreOptions'>
                     <h3>You might also like</h3>

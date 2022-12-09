@@ -76,6 +76,7 @@ export const CartPageArea = styled.div`
 
         button {
             height: 30px;
+            width: 100%;
             padding: 5px 10px;
             background-color: #f64c03;
             border: 0;

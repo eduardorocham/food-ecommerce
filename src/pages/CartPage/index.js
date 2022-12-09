@@ -3,9 +3,9 @@ import { FoodBanner, Container } from "../../components/mainComponents";
 
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../contexts/Context';
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
     const [subtotal, setSubtotal] = useState(0);
@@ -39,7 +39,7 @@ const CartPage = () => {
                                         <td>Product</td>
                                         <td>Price</td>
                                         <td>Quantity</td>
-                                        <td>Delete</td>  
+                                        {/* <td>Delete</td>   */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,9 +51,9 @@ const CartPage = () => {
                                             <td>{state[k].product.title}</td>
                                             <td>{state[k].product.price}</td>
                                             <td>{state[k].qt}</td>
-                                            <td className='icon-delete'>
-                                                <DeleteForeverIcon style={{width: 20}} />
-                                            </td> 
+                                            {/* <td className='icon-delete'>
+                                                <DeleteForeverIcon style={{width: 20}} /> 
+                                            </td>  */}
                                         </tr>
                                     ))}
                                 </tbody>
@@ -63,8 +63,12 @@ const CartPage = () => {
                                 Taxes and shipping will calculate at checkout
                             </div>
                             <div className='buttons'>
-                                <button>Continue Shopping</button>
-                                <button>Proceed to checkout</button>
+                                <Link to='/'>
+                                    <button>Continue Shopping</button>
+                                </Link>
+                                <Link to='/checkout'>  
+                                    <button>Proceed to checkout</button>
+                                </Link>
                             </div>
                         </div>
                     }

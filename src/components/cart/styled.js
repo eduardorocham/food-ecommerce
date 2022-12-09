@@ -48,6 +48,7 @@ export const CartArea = styled.div`
             font-size: 10px;
             font-weight: 700;
             cursor: pointer;
+            color: #000;
 
             &:hover {
                 background-color: #D7D7D7;
