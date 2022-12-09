@@ -6,6 +6,11 @@ export const CheckOutArea = styled.div`
         display: flex;
         margin-top: 40px;
 
+        @media(max-width: 425px) {
+            flex-direction: column;
+            padding: 0 15px;
+        }
+
         .checkOutArea-content--form {
             flex: 3;
 
@@ -61,6 +66,11 @@ export const CheckOutArea = styled.div`
 
             .total {
                 font-size: 18px;
+                margin-top: 20px;
+            }
+
+            @media(max-width: 425px) {  
+                margin-left: 0;
                 margin-top: 20px;
             }
         }
