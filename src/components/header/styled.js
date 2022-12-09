@@ -77,13 +77,14 @@ export const NavLink = styled(Link)`
 export const HeaderButtons = styled.div`
     display: flex;
 
-    .header-btn {
+    .header-btn, a {
         padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center; 
         cursor: pointer;
         position: relative;
+        color: #000;
 
         &.menu-icon {
             display: none;

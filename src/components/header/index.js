@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { HeaderArea, HeaderButtons, HeaderMenu, NavLink } from "./styled";
 import { Container } from "../mainComponents";
@@ -52,7 +53,9 @@ const Header = ({show, setShow}) => {
                         }
                     </div>
                     <div className="header-btn">
-                        <PersonIcon />
+                        <Link to='signin'> 
+                            <PersonIcon />
+                        </Link>
                     </div>
                     <div className="header-btn menu-icon">
                         <MenuIcon onClick={changeShowMenu}/>

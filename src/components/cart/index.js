@@ -44,7 +44,7 @@ const Cart = ({show, setShow}) => {
                         <div className='subtotal-value'>
                             Subtotal: <span>${subtotal}</span>
                         </div>
-                        <Link to="/cart">
+                        <Link to="/checkout">
                             <button>Check out</button> 
                         </Link>
                     </div>

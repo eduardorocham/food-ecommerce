@@ -5,6 +5,8 @@ import Foods from "./pages/Foods";
 import CartPage from "./pages/CartPage";
 import FoodsItemPage from "./pages/FoodsItemPage";
 import CheckOutPage from "./pages/CheckOutPage";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 const MainRoutes = () => {
     return (
@@ -14,6 +16,8 @@ const MainRoutes = () => {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/foods/:id" element={<FoodsItemPage />} />
             <Route path="/checkout" element={<CheckOutPage />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
         </Routes>
     )
 }
