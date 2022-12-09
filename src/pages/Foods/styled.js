@@ -60,5 +60,33 @@ export const FoodsArea = styled.div`
         text-align: center;
         font-weight: 700;
     }
+
+    .foodsArea-list--pagination {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .button-pagination, .button-active {
+            margin-left: 10px;
+            padding: 5px 8px;
+            border: 0;
+            border-radius: 4px;
+            color: #FFF;
+            font-size: 12px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f64c03;
+            }
+        }
+
+        .button-pagination {
+            background-color: #0e073a;
+        }
+
+        .button-active {
+            background-color: #f64c03;
+        }
+    }
 `
 
