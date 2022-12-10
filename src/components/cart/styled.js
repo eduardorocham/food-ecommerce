@@ -8,7 +8,6 @@ export const CartArea = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    padding: 20px 20px 0;
 
     @media(max-width: 425px) {
         width: 75%;
@@ -16,6 +15,7 @@ export const CartArea = styled.div`
 
     .close-cart {
        cursor: pointer;
+       padding: 20px 20px 0;
     }
 
     .cart-empty {
@@ -24,15 +24,26 @@ export const CartArea = styled.div`
         margin-top: 20px;
     }
 
+    .cart-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 58px);
+    }
+
+    .cart-items {
+        padding: 0 20px;
+    }
+
     .subtotal {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         background-color: #f64c03;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
         padding: 15px 30px;
         color: #FFF;
         font-weight: 700;

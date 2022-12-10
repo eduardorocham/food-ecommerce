@@ -31,6 +31,10 @@ export const MenuFoods = styled.div`
         grid-template-columns: repeat(4, 1fr);
         gap: 15px;
 
+        @media(max-width: 425px) {
+            gap: 0;
+        }
+
         .button-category {
             background-color: transparent;
             border: 0;

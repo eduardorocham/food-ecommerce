@@ -74,6 +74,10 @@ export const CartPageArea = styled.div`
         gap: 20px;
         margin-top: 20px;
 
+        @media(max-width: 425px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         button {
             height: 30px;
             width: 100%;
@@ -89,7 +93,7 @@ export const CartPageArea = styled.div`
             }
 
             @media(max-width: 425px) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
     }
