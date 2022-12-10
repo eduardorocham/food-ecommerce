@@ -5,7 +5,7 @@ export const CartArea = styled.div`
     background-color: #FFF;
     width: 23%;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
 
