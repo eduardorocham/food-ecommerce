@@ -11,11 +11,11 @@ This is an E-commerce application made with ReactJs. In this project, these are 
 * Contact page
 * Login and Register page
 
-## Technology
+## Technologies
 * ReactJs 
 * Javascript
 
-## Librarys
+## Libraries
 * react-router-dom
 * styled-components
 * icons-material
